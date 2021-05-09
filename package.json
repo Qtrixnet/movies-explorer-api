@@ -1,5 +1,6 @@
 {
   "name": "movies-explorer",
+  "author": "Kirill Shashichev",
   "version": "1.0.0",
   "description": "Дипломный проект - сайт по поиску фильмов",
   "main": "index.js",
@@ -36,7 +37,6 @@
     "url": "git+https://github.com/Qtrixnet/movies-explorer-api"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Qtrixnet/movies-explorer-api/issues"
