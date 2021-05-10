@@ -24,9 +24,9 @@ mongoose.connect(NODE_ENV === 'production' ? DATABASE_URL : devDatabaseUrl, {
 const app = express();
 app.use(cors());
 app.use(helmet());
-app.use(limiter);
 app.use(bodyParser.json());
 app.use(requestLogger);
+app.use(limiter);
 app.use(router);
 app.use(errorLogger);
 app.use(errors());

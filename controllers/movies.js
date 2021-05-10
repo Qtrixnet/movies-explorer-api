@@ -58,14 +58,16 @@ const createMovie = (req, res, next) => {
 
 const deleteMovie = (req, res, next) => {
   const { movieId } = req.params;
+  console.log(movieId);
 
   Movie.findById(movieId)
     .orFail(() => {
       throw new NotFoundError(`Фильм ${essenceNotFound}`);
     })
     .then((movie) => {
+      console.log(movie);
       if (movie.owner.equals(req.user._id)) {
-        Movie.findByIdAndRemove(movieId)
+        movie.remove(movieId)
           .then(() => {
             res.status(200).send({ message: `Фильм ${essenceDelete}` });
           })
