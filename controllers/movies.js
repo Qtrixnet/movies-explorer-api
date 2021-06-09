@@ -17,6 +17,7 @@ const getMovies = (req, res, next) => {
 };
 
 const createMovie = (req, res, next) => {
+  console.log(req.body);
   const owner = req.user._id;
   const {
     country,
@@ -48,6 +49,7 @@ const createMovie = (req, res, next) => {
     .then((movie) => res.send(movie))
     .catch((err) => {
       if (err.name === 'ValidationError') {
+        console.log(err);
         throw new BadRequestError(wrongData);
       } else {
         next(err);
