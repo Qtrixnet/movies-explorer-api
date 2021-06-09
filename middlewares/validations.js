@@ -73,12 +73,7 @@ const validateCreateMovie = celebrate({
       .messages({
         'any.required': 'Поле "thumbnail" должно быть заполнено',
       }),
-    movieId: Joi.string().required().custom((value, helpers) => {
-      if (ObjectId.isValid(value)) {
-        return value;
-      }
-      return helpers.message('Невалидный id фильма');
-    }),
+    movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
   }),
