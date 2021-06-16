@@ -11,7 +11,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const router = require('./routes');
 const { devDatabaseUrl } = require('./utils/config');
 
-const { PORT = 3000, NODE_ENV, DATABASE_URL } = process.env;
+const { PORT = 3001, NODE_ENV, DATABASE_URL } = process.env;
 
 mongoose.connect(NODE_ENV === 'production' ? DATABASE_URL : devDatabaseUrl, {
   useNewUrlParser: true,
